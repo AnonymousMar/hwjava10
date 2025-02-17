@@ -1,10 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.Scanner;
 import java.util.StringJoiner;
 
-public class ScannerContentReader implements FileContentReader {
+public class ScannerContentReader implements FileContentReaderImpl {
 
 
     @Override
@@ -16,7 +15,8 @@ public class ScannerContentReader implements FileContentReader {
                  result.add(scanner.nextLine());
             }
 
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
         return result.toString();

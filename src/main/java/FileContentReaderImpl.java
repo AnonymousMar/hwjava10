@@ -1,5 +1,5 @@
 import java.io.File;
 
-public interface FileContentReader {
+public interface FileContentReaderImpl {
     String read(File file);
 }

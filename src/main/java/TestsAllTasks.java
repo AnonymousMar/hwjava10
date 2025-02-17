@@ -15,7 +15,7 @@ public class TestsAllTasks {
     public static void main(String[] args) throws FileNotFoundException {
 
         try {
-            FileContentReader fileContentReader = new ScannerContentReader();
+            FileContentReaderImpl fileContentReader = new ScannerContentReader();
 
 
             String content = fileContentReader.read(new File("src/main/resources/files/words.txt"));
@@ -37,7 +37,6 @@ public class TestsAllTasks {
             System.out.println(json);
             try(FileOutputStream fos = new FileOutputStream("src/main/resources/files/user.json")) {
                 fos.write(json.getBytes());
-                fos.flush();
             }
 
             String contentPhones = fileContentReader.read(new File("src/main/resources/files/file.txt"));
@@ -49,7 +48,8 @@ public class TestsAllTasks {
                     System.out.println(c);
                 }
             }
-        }catch (IOException e){
+        }
+        catch (IOException e){
             e.printStackTrace();
         }
 
