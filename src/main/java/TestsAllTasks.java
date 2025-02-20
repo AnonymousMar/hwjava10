@@ -15,7 +15,7 @@ public class TestsAllTasks {
     public static void main(String[] args) throws FileNotFoundException {
 
         try {
-            FileContentReaderImpl fileContentReader = new ScannerContentReader();
+            FileContentReader fileContentReader = new FileContentReaderImpl();
 
 
             String content = fileContentReader.read(new File("src/main/resources/files/words.txt"));
@@ -49,7 +49,7 @@ public class TestsAllTasks {
                 }
             }
         }
-        catch (IOException e){
+        catch (IOException e) {
             e.printStackTrace();
         }
 
